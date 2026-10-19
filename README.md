@@ -1,4 +1,5 @@
 # PlantCare AI — AI-Powered Plant Disease Detection
+<img width="1600" height="900" alt="WhatsApp Image 2026-10-19 at 12 57 55 PM" src="https://github.com/user-attachments/assets/6de6357e-7b36-4fdb-a2c8-2cdc0d899550" />
 
 An intelligent, accessible web application designed to help farmers, agronomists, and home gardeners identify plant diseases early by simply uploading a photograph of an affected plant or leaf.
 
