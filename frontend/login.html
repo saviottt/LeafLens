@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in or create a PlantCare AI account to save detection reports and monitor crop health trends.">
+  <title>Account — PlantCare AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" aria-label="PlantCare AI Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 1c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        PlantCare AI
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="detect.html" data-i18n="nav_detect">Detect Disease</a></li>
+        <li><a href="login.html" class="btn-nav nav-login active" data-i18n="nav_login">Login</a></li>
+        <li><a href="#" class="btn-nav nav-logout" style="display:none" data-i18n="nav_logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-overlay"></div>
+  </nav>
+
+  <main class="auth-page">
+    <div class="auth-card">
+
+      <!-- Tab Switcher -->
+      <div style="display: flex; border-bottom: 2px solid var(--gray-100); margin-bottom: var(--space-6);">
+        <button type="button" id="tab-login" class="btn" style="flex: 1; border-radius: 0; border: none; background: transparent; padding: 0.75rem; font-weight: 700; color: var(--color-primary); border-bottom: 3px solid var(--color-primary);">Sign In</button>
+        <button type="button" id="tab-register" class="btn" style="flex: 1; border-radius: 0; border: none; background: transparent; padding: 0.75rem; font-weight: 600; color: var(--gray-500); border-bottom: 3px solid transparent;">Register</button>
+      </div>
+
+      <!-- Login Form Section -->
+      <div id="login-section">
+        <h1>Welcome Back</h1>
+        <p class="auth-subtitle">Sign in to access your saved diagnostic reports.</p>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label for="login-username">Username or Email</label>
+            <input type="text" id="login-username" class="form-control" placeholder="Enter your username" required autocomplete="username">
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top: var(--space-6);">
+            Sign In
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          Don't have an account? <a href="#" id="switch-to-register" style="color: var(--color-primary); font-weight: 600;">Create one free</a>
+        </div>
+      </div>
+
+      <!-- Register Form Section -->
+      <div id="register-section" style="display: none;">
+        <h1>Create Account</h1>
+        <p class="auth-subtitle">Join PlantCare AI to keep track of crop diseases.</p>
+
+        <form id="register-form" novalidate>
+          <div class="form-group">
+            <label for="reg-fullname">Full Name (optional)</label>
+            <input type="text" id="reg-fullname" class="form-control" placeholder="e.g. Ramesh Kumar">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" class="form-control" placeholder="Choose a username" required autocomplete="username">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-email">Email Address</label>
+            <input type="email" id="reg-email" class="form-control" placeholder="you@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" class="form-control" placeholder="At least 6 characters" required autocomplete="new-password">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-confirm-password">Confirm Password</label>
+            <input type="password" id="reg-confirm-password" class="form-control" placeholder="Re-enter password" required autocomplete="new-password">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top: var(--space-6);">
+            Create Account
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          Already registered? <a href="#" id="switch-to-login" style="color: var(--color-primary); font-weight: 600;">Sign in here</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 PlantCare AI. All rights reserved. This tool provides preliminary guidance only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Tab switching interaction
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const loginSection = document.getElementById('login-section');
+    const registerSection = document.getElementById('register-section');
+    const switchToRegister = document.getElementById('switch-to-register');
+    const switchToLogin = document.getElementById('switch-to-login');
+
+    function showLogin() {
+      loginSection.style.display = 'block';
+      registerSection.style.display = 'none';
+      tabLogin.style.color = 'var(--color-primary)';
+      tabLogin.style.borderBottomColor = 'var(--color-primary)';
+      tabRegister.style.color = 'var(--gray-500)';
+      tabRegister.style.borderBottomColor = 'transparent';
+    }
+
+    function showRegister() {
+      loginSection.style.display = 'none';
+      registerSection.style.display = 'block';
+      tabRegister.style.color = 'var(--color-primary)';
+      tabRegister.style.borderBottomColor = 'var(--color-primary)';
+      tabLogin.style.color = 'var(--gray-500)';
+      tabLogin.style.borderBottomColor = 'transparent';
+    }
+
+    tabLogin.addEventListener('click', showLogin);
+    tabRegister.addEventListener('click', showRegister);
+    switchToRegister.addEventListener('click', (e) => { e.preventDefault(); showRegister(); });
+    switchToLogin.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
+  </script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about PlantCare AI, how our computer vision and AI plant pathology analysis works, photo guides, and FAQ.">
+  <title>About & Best Practices — PlantCare AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" aria-label="PlantCare AI Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 1c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        PlantCare AI
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="detect.html" data-i18n="nav_detect">Detect Disease</a></li>
+        <li><a href="about.html" class="active" data-i18n="nav_about">About</a></li>
+        <li><a href="login.html" class="btn-nav nav-login" data-i18n="nav_login">Login</a></li>
+        <li><a href="#" class="btn-nav nav-logout" style="display:none" data-i18n="nav_logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-overlay"></div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 data-i18n="nav_about">About PlantCare AI</h1>
+        <p>Empowering growers and farmers with accessible, artificial intelligence diagnostics.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container about-content">
+
+        <!-- Mission -->
+        <h2>Our Mission</h2>
+        <p>
+          PlantCare AI was developed to bridge the critical gap between agricultural science and field farming. Crop diseases destroy up to 40% of global food supplies each year. By leveraging advanced computer vision and multimodal artificial intelligence, PlantCare AI equips farmers, agronomists, and home gardeners with fast, accessible preliminary assessments directly from an ordinary smartphone photo.
+        </p>
+
+        <!-- How It Works -->
+        <h2 id="guide">How the AI Detection Works</h2>
+        <p>
+          When you submit a photograph of an affected plant, the system analyzes the visual patterns using advanced multimodal machine learning models:
+        </p>
+        <ul>
+          <li><strong>Image Verification:</strong> The system verifies that the image depicts plant matter, filtering out unrelated photos.</li>
+          <li><strong>Plant & Tissue Identification:</strong> Identifies the crop species and affected organ (leaf, stem, root, or fruit).</li>
+          <li><strong>Pathological Feature Extraction:</strong> Detects symptomatic patterns such as chlorosis, necrotic lesions, fungal spores, mosaic mottling, and wilting.</li>
+          <li><strong>Structured Health Analysis:</strong> Generates a structured diagnosis with severity estimation, actionable cultural controls, and long-term prevention strategies.</li>
+        </ul>
+
+        <!-- Photography Best Practices -->
+        <h2>Best Practices for Photo Capture</h2>
+        <p>For the highest diagnostic accuracy, keep these tips in mind when photographing your crops:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+          <div class="card" style="padding: 1.25rem;">
+            <h4 style="color: var(--green-700); margin-bottom: 0.5rem;">Natural Daytime Lighting</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600); margin: 0;">Photograph during daylight hours. Avoid intense camera flash glare or harsh shadows that obscure leaf texture.</p>
+          </div>
+          <div class="card" style="padding: 1.25rem;">
+            <h4 style="color: var(--green-700); margin-bottom: 0.5rem;">Sharp Focus</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600); margin: 0;">Ensure the camera focuses directly on the affected lesion or discoloration rather than the background soil.</p>
+          </div>
+          <div class="card" style="padding: 1.25rem;">
+            <h4 style="color: var(--green-700); margin-bottom: 0.5rem;">Show the Symptom Boundary</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-600); margin: 0;">Capture the margin where healthy tissue meets diseased tissue — this provides critical diagnostic context.</p>
+          </div>
+        </div>
+
+        <!-- Frequently Asked Questions -->
+        <h2 id="faq">Frequently Asked Questions</h2>
+        <div style="margin-top: 1rem;">
+          <div class="card" style="padding: 1.25rem; margin-bottom: 1rem;">
+            <h4 style="margin-bottom: 0.5rem;">Is PlantCare AI free to use?</h4>
+            <p style="font-size: 0.95rem; color: var(--gray-700); margin: 0;">Yes! You can upload photographs and receive instant disease assessments without any fee. Creating an optional account allows you to save your report history.</p>
+          </div>
+          <div class="card" style="padding: 1.25rem; margin-bottom: 1rem;">
+            <h4 style="margin-bottom: 0.5rem;">Does it support regional Indian languages?</h4>
+            <p style="font-size: 0.95rem; color: var(--gray-700); margin: 0;">Yes! PlantCare AI supports both English and Malayalam (മലയാളം), providing localized explanations and treatment advice for regional growers.</p>
+          </div>
+          <div class="card" style="padding: 1.25rem; margin-bottom: 1rem;">
+            <h4 style="margin-bottom: 0.5rem;">What crops are supported?</h4>
+            <p style="font-size: 0.95rem; color: var(--gray-700); margin: 0;">The system identifies pathology across major cash crops and staple foods, including tomatoes, potatoes, rice, bananas, coconuts, peppers, corn, wheat, apples, grapes, and citrus varieties.</p>
+          </div>
+        </div>
+
+        <!-- Mandatory Disclaimer -->
+        <h2 id="disclaimer">Agricultural & Medical Disclaimer</h2>
+        <div class="disclaimer">
+          <strong>Important Advisory:</strong> PlantCare AI is an assistive decision-support application built for educational and preliminary guidance purposes only. Machine learning models can make errors or misclassify rare pathogens and abiotic stresses. 
+          <br><br>
+          Under no circumstances should recommendations generated by this software substitute for in-person inspection and laboratory pathology testing conducted by a certified agronomist or local agricultural extension authority. Always consult official regional pest management guidelines and strictly observe protective safety instructions before applying any agrochemical sprays or fertilizers.
+        </div>
+
+        <!-- Privacy & Terms -->
+        <h2 id="privacy">Privacy & Terms of Use</h2>
+        <p id="terms">
+          PlantCare AI respects user data privacy. Uploaded photographs are processed solely for the purpose of executing the requested plant disease analysis and, if authenticated, stored in your private user dashboard. We do not sell or distribute personal information to third-party advertisers.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 1c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+            </svg>
+            PlantCare AI
+          </div>
+          <p class="footer-about">AI-powered agricultural tool helping farmers and gardeners detect plant diseases early, protect crop health, and practice safe, sustainable farming.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="detect.html">Detect Disease</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="about.html#faq">FAQ</a></li>
+            <li><a href="about.html#disclaimer">Disclaimer</a></li>
+            <li><a href="about.html#guide">Best Practices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="about.html#privacy">Privacy Policy</a></li>
+            <li><a href="about.html#terms">Terms of Service</a></li>
+            <li><a href="about.html#disclaimer">Agricultural Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PlantCare AI. All rights reserved. This tool provides preliminary guidance only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

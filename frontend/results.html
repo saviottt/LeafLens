@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View comprehensive AI diagnosis results, symptoms, severity, and treatment suggestions for your plant.">
+  <title>Analysis Results — PlantCare AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" aria-label="PlantCare AI Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 1c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        PlantCare AI
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="detect.html" data-i18n="nav_detect">Detect Disease</a></li>
+        <li><a href="login.html" class="btn-nav nav-login" data-i18n="nav_login">Login</a></li>
+        <li><a href="#" class="btn-nav nav-logout" style="display:none" data-i18n="nav_logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-overlay"></div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1>Plant Health Assessment</h1>
+        <p>AI diagnosis, symptom breakdown, and actionable agricultural recommendations.</p>
+      </div>
+    </div>
+
+    <!-- Results Container -->
+    <section class="section">
+      <div class="container" id="results-content" style="max-width: 820px;">
+        <!-- Dynamically rendered by results.js -->
+        <div class="card" style="padding: 3rem; text-align: center;">
+          <div class="spinner" style="margin: 0 auto 1.5rem;"></div>
+          <p class="loading-text">Loading analysis result...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 1c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+            </svg>
+            PlantCare AI
+          </div>
+          <p class="footer-about">AI-powered agricultural tool helping farmers and gardeners detect plant diseases early, protect crop health, and practice safe, sustainable farming.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="detect.html">Detect Disease</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="about.html#faq">FAQ</a></li>
+            <li><a href="about.html#disclaimer">Disclaimer</a></li>
+            <li><a href="about.html#guide">Best Practices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="about.html#privacy">Privacy Policy</a></li>
+            <li><a href="about.html#terms">Terms of Service</a></li>
+            <li><a href="about.html#disclaimer">Agricultural Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PlantCare AI. All rights reserved. This tool provides preliminary guidance only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/results.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

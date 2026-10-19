@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your historical plant disease reports, statistics, disease distributions, and crop analytics.">
+  <title>Dashboard — PlantCare AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body id="dashboard-page">
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" aria-label="PlantCare AI Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 1c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        PlantCare AI
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="detect.html" data-i18n="nav_detect">Detect Disease</a></li>
+        <li><a href="dashboard.html" class="active auth-only" data-i18n="nav_dashboard">Dashboard</a></li>
+        <li><a href="login.html" class="btn-nav nav-login" data-i18n="nav_login">Login</a></li>
+        <li><a href="#" class="btn-nav nav-logout" style="display:none" data-i18n="nav_logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-overlay"></div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 data-i18n="nav_dashboard">Farmer Dashboard</h1>
+        <p>Monitor your crop health history, disease trends, and diagnostic reports.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container dashboard-content">
+
+        <!-- Stats Overview Cards -->
+        <div class="stats-grid" id="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--green-700)">—</div>
+            <div class="stat-label">Total Analyses</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--warning)">—</div>
+            <div class="stat-label">Diseases Detected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--success)">—</div>
+            <div class="stat-label">Healthy Plants</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--info)">—</div>
+            <div class="stat-label">Crop Types</div>
+          </div>
+        </div>
+
+        <!-- Visual Analytics Row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-8);">
+          <div class="card" style="padding: var(--space-6);">
+            <div id="disease-chart">
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Diseases Detected</h3>
+              <p class="text-muted text-center" style="padding: 2rem 0;">Loading analytics...</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: var(--space-6);">
+            <div id="crop-chart">
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Crops Analyzed</h3>
+              <p class="text-muted text-center" style="padding: 2rem 0;">Loading analytics...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reports Section Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-3);">
+          <div>
+            <h2 style="font-size: 1.4rem;">Diagnosis History</h2>
+            <p class="text-muted" style="font-size: 0.9rem;">Review past plant health analyses and treatments.</p>
+          </div>
+          <a href="detect.html" class="btn btn-primary btn-sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            New Detection
+          </a>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="filter-bar">
+          <input type="text" id="report-search" class="form-control" placeholder="Search by crop or disease...">
+          <select id="crop-filter" class="form-control">
+            <option value="">All Crop Types</option>
+            <option value="tomato">Tomato</option>
+            <option value="potato">Potato</option>
+            <option value="rice">Rice</option>
+            <option value="banana">Banana</option>
+            <option value="coconut">Coconut</option>
+            <option value="pepper">Pepper</option>
+            <option value="corn">Corn</option>
+            <option value="wheat">Wheat</option>
+            <option value="grape">Grape</option>
+            <option value="apple">Apple</option>
+            <option value="citrus">Citrus</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Reports Table -->
+        <div class="reports-table-wrapper card" style="border: 1px solid var(--color-border); padding: 0;">
+          <table class="reports-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Crop</th>
+                <th>Detected Condition</th>
+                <th>Severity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="reports-tbody">
+              <!-- Loaded by dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div id="reports-empty" class="empty-state" style="display: none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <h3 data-i18n="no_reports">No reports yet</h3>
+          <p class="text-muted" style="margin-bottom: 1.5rem;" data-i18n="no_reports_desc">Start by analyzing a plant image to create your first report.</p>
+          <a href="detect.html" class="btn btn-primary" data-i18n="hero_cta">Analyze Your Plant</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 PlantCare AI. All rights reserved. This tool provides preliminary guidance only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
